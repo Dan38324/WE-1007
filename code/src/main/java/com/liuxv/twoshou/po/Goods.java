@@ -7,6 +7,8 @@ public class Goods {
 
     private Integer typeId;
 
+    private String pic;
+
     private String seller;
 
     private Integer status;
@@ -35,6 +37,14 @@ public class Goods {
 
     public void setTypeId(Integer typeId) {
         this.typeId = typeId;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic == null ? null : pic.trim();
     }
 
     public String getSeller() {

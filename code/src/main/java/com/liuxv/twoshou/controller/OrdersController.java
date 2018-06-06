@@ -1,5 +1,6 @@
 package com.liuxv.twoshou.controller;
 
+import com.liuxv.twoshou.po.Goods;
 import com.liuxv.twoshou.po.Orders;
 import com.liuxv.twoshou.po.User;
 import com.liuxv.twoshou.service.OrdersService;
@@ -26,8 +27,22 @@ public class OrdersController {
     public String showOrders(Model model){
         List<Orders> orders=ordersService.findAllOrders();
         model.addAttribute( "ordersList",orders );
-        return "/orders/showOrders";
+        return "orders/showOrders";
     }
+
+    @RequestMapping("/buy")
+    public String buy(String name, String uname,String seller, Model model){
+
+        System.out.println( name+"  "+uname+"  "+seller);
+        Orders order=new Orders(name,seller,uname);
+        System.out.println( order.getName()+"!!!!!!"+order.getSeller()+"!!!!!"+order.getBuyer() );
+        ordersService.insertOrders( order );
+        List<Orders> orders=ordersService.findOrdersByUser( uname );
+        model.addAttribute( "ordersList",orders );
+        model.addAttribute( "uname",uname );
+        return "orders/showOrders";
+    }
+
 
 
 
@@ -38,17 +53,25 @@ public class OrdersController {
     }
 
     @RequestMapping("/delete")
-    public String delete(@RequestParam(value = "name") String name, Model model){
+    public String delete(String name,String uname, Model model){
         ordersService.deleteOrders( name );
-        return "redirect:orders/showOrders";
+        model.addAttribute( "uname",uname );
+        List<Orders> orders=ordersService.findOrdersByUser( uname );
+        model.addAttribute( "ordersList",orders );
+        return "redirect:/orders/showOrders";
     }
 
 
     @RequestMapping("/findOrdersByUser")
-    public String findOrdersByUser(User user,Model model){
-        List<Orders> orders=ordersService.findOrdersByUser( user );
+    public String findOrdersByUser(String uname,Model model){
+        System.out.println( uname );
+        List<Orders> orders=ordersService.findOrdersByUser( uname );
+        for(int i=0;i<orders.size();i++){
+            System.out.println( orders.get( i ).getName() +"+++++++++++++++++++++++++++++++++");
+        }
         model.addAttribute( "ordersList",orders );
-        return "/findOrdersByUser";
+       model.addAttribute( "uname",uname );
+        return "orders/showOrders";
     }
 
 

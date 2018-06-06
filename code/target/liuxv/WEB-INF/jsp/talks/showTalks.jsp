@@ -24,12 +24,13 @@
         <td>留言人</td>
         <td>留言日期</td>
         <td>留言内容</td>
+        <td>操作</td>
     </tr>
     <c:forEach items="${talksList }" var="item">
         <tr>
             <td>${item.id }</td>
             <td>${item.talkerName }</td>
-            <td>${item.createDate }</td>
+            <td>${item.date }</td>
             <td>${item.words}</td>
 
 

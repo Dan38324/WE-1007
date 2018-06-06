@@ -1,6 +1,7 @@
 package com.liuxv.twoshou.controller;
 
 import com.liuxv.twoshou.po.Talks;
+import com.liuxv.twoshou.po.User;
 import com.liuxv.twoshou.service.TalksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,6 +22,7 @@ import java.util.List;
 @RequestMapping("/talks")
 public class TalksController {
 
+    static int num=20;
     @Autowired
     private TalksService talksService;
 
@@ -30,10 +33,44 @@ public class TalksController {
         return "talks/showTalks";
     }
 
+
+    @RequestMapping("/showTalksUser")
+    public String showTalksUser(String uname, Model model){
+        List<Talks> talksList=talksService.getAllTalks();
+        for(int i=0;i<talksList.size();i++){
+            System.out.println( talksList.get( i ).getId()+" "+talksList.get( i ).getWords() );
+        }
+        model.addAttribute( "talksList",talksList );
+        model.addAttribute( "uname",uname );
+        return "talks/showTalksUser";
+    }
+
     @RequestMapping("/delete")
     public String delete(@RequestParam("id") Integer id,Model model){
         talksService.deleteTalks( id );
         return "talks/showTalks";
+    }
+
+
+    @RequestMapping("/addTalks")
+    public String addTalks(String uname,Talks talks,Model model){
+        Date date=new Date(  );
+        num++;
+        String s=date.toString();
+        talks.setId( num );
+        talks.setDate( s );
+        System.out.println( s );
+        System.out.println( uname );
+        talks.setTalkerName( uname);
+        //Talks talks=new Talks(num,user.getName(),s,words);
+        talksService.insert( talks );
+        List<Talks> talksList=talksService.getAllTalks();
+        for(int i=0;i<talksList.size();i++){
+            System.out.println( talksList.get( i ).getId()+" "+talksList.get( i ).getWords() );
+        }
+        model.addAttribute( "talksList",talksList );
+        model.addAttribute( "name",uname );
+        return "talks/showTalksUser";
     }
 
 

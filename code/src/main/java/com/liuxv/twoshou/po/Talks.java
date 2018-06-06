@@ -1,15 +1,16 @@
 package com.liuxv.twoshou.po;
 
-import java.util.Date;
-
 public class Talks {
     private Integer id;
 
     private String talkerName;
 
-    private Date createDate;
+    private String date;
 
     private String words;
+
+
+
 
     public Integer getId() {
         return id;
@@ -27,12 +28,12 @@ public class Talks {
         this.talkerName = talkerName == null ? null : talkerName.trim();
     }
 
-    public Date getCreateDate() {
-        return createDate;
+    public String getDate() {
+        return date;
     }
 
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
+    public void setDate(String date) {
+        this.date = date == null ? null : date.trim();
     }
 
     public String getWords() {

@@ -30,4 +30,9 @@ public class TalksServicesImpl implements TalksService {
     public void deleteTalks(int id) {
         talksMapper.deleteByPrimaryKey( id );
     }
+
+    @Override
+    public void insert(Talks talks) {
+        talksMapper.insert( talks );
+    }
 }

@@ -13,7 +13,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>用户列表</title>
+    <title>showOrders</title>
 
 </head>
 <body>
@@ -23,6 +23,7 @@
         <td>商品名称</td>
         <td>卖家</td>
         <td>买家</td>
+        <td>操作</td>
     </tr>
     <c:forEach items="${ordersList }" var="item">
         <tr>
@@ -31,7 +32,7 @@
             <td>${item.buyer }</td>
 
 
-            <td><a href="${pageContext.request.contextPath }/orders/delete?name=${item.name}">删除</a></td>
+            <td><a href="${pageContext.request.contextPath }/orders/delete?name=${item.name}&uname=${uname}">删除</a></td>
 
         </tr>
     </c:forEach>

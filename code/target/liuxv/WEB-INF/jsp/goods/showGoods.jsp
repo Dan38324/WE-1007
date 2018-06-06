@@ -23,6 +23,7 @@
     <tr>
         <td>商品名称</td>
         <td>商品价格</td>
+        <td>商品图片</td>
         <td>商品类型</td>
         <td>商品卖家</td>
         <td>商品状态</td>
@@ -33,6 +34,12 @@
         <tr>
             <td>${item.name }</td>
             <td>${item.price }</td>
+            <td>
+                <c:if test="${items.pic !=null}">
+                    <img src="/pic/${items.pic}" width=100 height=100/>
+                    <br/>
+                </c:if>
+            </td>
             <td>${item.typeId}</td>
             <td>${item.seller}</td>
             <td>${item.status}</td>

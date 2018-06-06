@@ -81,23 +81,6 @@
       order by ${orderByClause}
     </if>
   </select>
-
-
-
-
-  <select id="getAllOrders" resultMap="BaseResultMap">
-    select name,seller,buyer from orders;
-  </select>
-
-
-
-
-
-
-
-
-
-
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
@@ -151,6 +134,47 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <select id="getAllOrders" resultMap="BaseResultMap">
+    select name,seller,buyer from orders;
+  </select>
+
+
+
+
+
+  <select id="findOrdersByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select name,seller,buyer from orders where buyer =#{string} or seller=#{string};
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <update id="updateByExampleSelective" parameterType="map" >
     update orders
     <set >

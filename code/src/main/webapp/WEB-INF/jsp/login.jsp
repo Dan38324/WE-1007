@@ -23,7 +23,8 @@
     </div>
     <input  type="submit" value="login"/>
     <br>
-    <a href="register.jsp" name="">注册</a>
+    <a href="/register" name="">注册</a>
+    <a href="/adminLogin" >管理员登陆</a>
 </form>
 
 

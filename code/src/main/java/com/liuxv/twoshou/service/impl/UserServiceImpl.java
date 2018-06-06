@@ -33,6 +33,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public User getUserByName(String name) {
+        return userMapper.selectByPrimaryKey( name );
+    }
+
+    @Override
     public void deleteUser(String name) {
         userMapper.deleteByPrimaryKey( name );
     }

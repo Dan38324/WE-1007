@@ -17,7 +17,10 @@ public interface TalksMapper {
     int insertSelective(Talks record);
 
     List<Talks> selectByExample(TalksExample example);
+
     List<Talks> getAllTalks();
+
+
 
     Talks selectByPrimaryKey(Integer id);
 

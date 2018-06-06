@@ -81,19 +81,6 @@
       order by ${orderByClause}
     </if>
   </select>
-
-
-  <select id="selectAllUsers" resultMap="BaseResultMap" >
-    select  name ,password,user_type from user;
-  </select>
-
-
-
-
-
-
-
-
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
@@ -141,6 +128,40 @@
       </if>
     </trim>
   </insert>
+
+
+
+
+
+
+
+  <select id="selectAllUsers" resultMap="BaseResultMap" >
+    select  name ,password,user_type from user;
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <select id="countByExample" parameterType="com.liuxv.twoshou.po.UserExample" resultType="java.lang.Integer" >
     select count(*) from user
     <if test="_parameter != null" >

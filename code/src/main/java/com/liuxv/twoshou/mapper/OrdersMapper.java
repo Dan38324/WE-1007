@@ -17,7 +17,13 @@ public interface OrdersMapper {
     int insertSelective(Orders record);
 
     List<Orders> selectByExample(OrdersExample example);
+
     List<Orders> getAllOrders();
+
+
+    List<Orders> findOrdersByName(String name);
+
+
 
     Orders selectByPrimaryKey(String name);
 

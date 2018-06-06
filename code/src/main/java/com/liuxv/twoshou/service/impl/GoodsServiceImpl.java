@@ -34,9 +34,11 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<Goods> findGoodsList() {
         //GoodsExample goodsExample=new GoodsExample();
-        List<Goods> goods=goodsMapper.selectAllGoods();
+        List<Goods> goods=goodsMapper.AllGoods();
         return goods;
     }
+
+
 
 
 
@@ -49,6 +51,11 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void insertGoods(Goods goods) {
         goodsMapper.insert( goods );
+    }
+
+    @Override
+    public Goods findGoodsByName(String name) {
+        return goodsMapper.selectByPrimaryKey( name );
     }
 
 }

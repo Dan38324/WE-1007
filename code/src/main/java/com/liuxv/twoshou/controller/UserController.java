@@ -24,6 +24,8 @@ public class UserController {
     private UserService userService;
 
 
+
+
     @RequestMapping("/login")
     public String login(User user,Model model){
         List<User> users=userService.getAllUser();
@@ -42,7 +44,7 @@ public class UserController {
             set.add( s1);
             set.add( s2 );
             System.out.println( set.size() );
-            if(set.size()==2){
+            if(set.size()==2&&users.get( i ).getUserType()==2){
                 flag=true;
                 break;
             }
@@ -54,7 +56,8 @@ public class UserController {
 
         System.out.println( flag );
         if(flag){
-            return "home";
+            model.addAttribute( "name",user.getName() );
+            return "userHome";
         }
         else {
             return "login";
@@ -62,6 +65,47 @@ public class UserController {
 
 
     }
+
+
+    @RequestMapping("/adminLogin")
+    public String adminLogin(User user,Model model) {
+        List<User> users = userService.getAllUser();
+        user.setUserType( 2 );
+        boolean flag = false;
+        for (int i = 0; i < users.size(); i++) {
+            Set<String> set = new LinkedHashSet<>();
+
+            set.add( users.get( i ).getName() );
+            set.add( users.get( i ).getPassword() );
+            System.out.println( users.get( i ).getName() + " " + user.getName() );
+            System.out.println( users.get( i ).getPassword() + " " + user.getPassword() );
+
+            String s1 = user.getName();
+            String s2 = user.getPassword();
+            set.add( s1 );
+            set.add( s2 );
+            System.out.println( set.size() );
+            if (set.size() == 2&&users.get( i ).getUserType()==1) {
+                flag = true;
+                break;
+            }
+            System.out.println( set.size() );
+
+
+        }
+
+        System.out.println( flag );
+        if (flag) {
+            return "home";
+        } else {
+            return "adminLogin";
+        }
+
+
+    }
+
+
+
 
     @RequestMapping("/register")
     public String register(User user,Model model){
@@ -77,7 +121,8 @@ public class UserController {
 
         if(flag){
             userService.insertUser( user );
-            return "home";
+            model.addAttribute( "name",user.getName() );
+            return "userHome";
         }
         else {
             return "login";

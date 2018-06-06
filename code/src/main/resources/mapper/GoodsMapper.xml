@@ -5,6 +5,7 @@
     <id column="name" property="name" jdbcType="VARCHAR" />
     <result column="price" property="price" jdbcType="INTEGER" />
     <result column="type_id" property="typeId" jdbcType="INTEGER" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
     <result column="seller" property="seller" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
     <result column="information" property="information" jdbcType="VARCHAR" />
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    name, price, type_id, seller, status, information
+    name, price, type_id, pic, seller, status, information
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.liuxv.twoshou.po.GoodsExample" >
     select
@@ -86,14 +87,9 @@
   </select>
 
 
-
-
-
-
-  <select id="selectAllGoods" resultMap="BaseResultMap" >
-    select name,price,type_id,seller,status,information from goods;
+  <select id="AllGoods" resultMap="BaseResultMap" >
+    select <include refid="Base_Column_List" /> from goods;
   </select>
-
 
 
 
@@ -119,11 +115,11 @@
   </delete>
   <insert id="insert" parameterType="com.liuxv.twoshou.po.Goods" >
     insert into goods (name, price, type_id, 
-      seller, status, information
-      )
+      pic, seller, status, 
+      information)
     values (#{name,jdbcType=VARCHAR}, #{price,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}, 
-      #{seller,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{information,jdbcType=VARCHAR}
-      )
+      #{pic,jdbcType=VARCHAR}, #{seller,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{information,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.liuxv.twoshou.po.Goods" >
     insert into goods
@@ -136,6 +132,9 @@
       </if>
       <if test="typeId != null" >
         type_id,
+      </if>
+      <if test="pic != null" >
+        pic,
       </if>
       <if test="seller != null" >
         seller,
@@ -156,6 +155,9 @@
       </if>
       <if test="typeId != null" >
         #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="pic != null" >
+        #{pic,jdbcType=VARCHAR},
       </if>
       <if test="seller != null" >
         #{seller,jdbcType=VARCHAR},
@@ -186,6 +188,9 @@
       <if test="record.typeId != null" >
         type_id = #{record.typeId,jdbcType=INTEGER},
       </if>
+      <if test="record.pic != null" >
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
       <if test="record.seller != null" >
         seller = #{record.seller,jdbcType=VARCHAR},
       </if>
@@ -205,6 +210,7 @@
     set name = #{record.name,jdbcType=VARCHAR},
       price = #{record.price,jdbcType=INTEGER},
       type_id = #{record.typeId,jdbcType=INTEGER},
+      pic = #{record.pic,jdbcType=VARCHAR},
       seller = #{record.seller,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
       information = #{record.information,jdbcType=VARCHAR}
@@ -220,6 +226,9 @@
       </if>
       <if test="typeId != null" >
         type_id = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="pic != null" >
+        pic = #{pic,jdbcType=VARCHAR},
       </if>
       <if test="seller != null" >
         seller = #{seller,jdbcType=VARCHAR},
@@ -237,6 +246,7 @@
     update goods
     set price = #{price,jdbcType=INTEGER},
       type_id = #{typeId,jdbcType=INTEGER},
+      pic = #{pic,jdbcType=VARCHAR},
       seller = #{seller,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       information = #{information,jdbcType=VARCHAR}

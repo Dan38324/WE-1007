@@ -13,7 +13,7 @@ import java.util.List;
 public interface OrdersService {
     public List<Orders> findAllOrders();
 
-    public List<Orders> findOrdersByUser(User user);
+    public List<Orders> findOrdersByUser(String name);
 
     public void insertOrders(Orders orders);
 
