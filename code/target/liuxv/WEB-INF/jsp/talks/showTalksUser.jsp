@@ -16,21 +16,29 @@
     <title>showTalksUser</title>
 
 </head>
-<body>
-<h3>welcome，${uname}</h3>
+<body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg">
+<h3>Welcome，${uname}</h3>
+   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="center" valign="middle">
+	
 
-<form id="talksForm" action="${pageContext.request.contextPath }/talks/addTalks?user=${uname}" method="post"  enctype="multipart/form-data">
-    添加留言信息：
-    <table width="100%" border=1>
+
+<form id="talksForm" action="${pageContext.request.contextPath }/talks/addTalks?uname=${uname}" method="post"  enctype="multipart/form-data">
+  
+  
+   
+    <table width="100%" border=none style="border-style:none" bgcolor="blanchedalmond">
         <tr>
-            <td>留言内容</td>
-            <td>
-                <textarea rows="3" cols="30" name="words"></textarea>
-            </td>
+            <td style="border-style:none">留言内容</td>
+
+        </tr>
+        <tr>
+        	            <td style="border-style:none">
+                <textarea rows="3" cols="100" name="words"></textarea>
+            </td> 
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><input type="submit" value="添加留言"/>
+            <td  style="border-style:none" colspan="2" align="center"><input type="submit" value="添加留言"/>
             </td>
         </tr>
     </table>
@@ -40,25 +48,29 @@
 
 
 
-留言列表：
-<table width="100%" border=1>
-    <tr>
-        <td>留言编号</td>
-        <td>留言人</td>
-        <td>留言日期</td>
-        <td>留言内容</td>
-    </tr>
-    <c:forEach items="${talksList }" var="item">
-        <tr>
-            <td>${item.id }</td>
-            <td>${item.talkerName }</td>
-            <td>${item.date }</td>
-            <td>${item.words}</td>
+
+       <table width="100%" style="border-style:none" border=hidden bgcolor="blanchedalmond" margin=auto>
+           留言列表
+           <tr>
+               <td style="border-style:none">留言编号</td>
+               <td style="border-style:none">留言人</td>
+               <td style="border-style:none">留言日期</td>
+               <td style="border-style:none">留言内容</td>
+
+           </tr>
+           <c:forEach items="${talksList }" var="item">
+               <tr>
+                   <td style="border-style:none">${item.id }</td>
+                   <td style="border-style:none">${item.talkerName }</td>
+                   <td style="border-style:none">${item.date }</td>
+                   <td style="border-style:none">${item.words}</td>
 
 
-        </tr>
-    </c:forEach>
 
+               </tr>
+           </c:forEach>
+
+       </table>
 </table>
 </body>
 </html>

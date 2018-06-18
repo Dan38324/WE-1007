@@ -17,29 +17,32 @@
 
 </head>
 <body>
+	<body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg">
 
-
-    用户列表：
-    <table width="100%" border=1>
+   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="center" valign="middle">
+    <font size="15">用户列表：</font>
+    <table width="100%" style="border-style:none" border=2 bgcolor="blanchedalmond">
+    
         <tr>
-            <td>名称</td>
-            <td>密码</td>
-            <td>用户类型</td>
+            <td style="border-style:none">名称</td>
+            <td style="border-style:none">密码</td>
+            <td style="border-style:none">用户类型</td>
 
-            <td>操作</td>
+            <td style="border-style:none">操作</td>
         </tr>
         <c:forEach items="${usersList }" var="item">
             <tr>
-                <td>${item.name }</td>
-                <td>${item.password }</td>
-                <td>${item.userType }</td>
+                <td style="border-style:none">${item.name }</td>
+                <td style="border-style:none">${item.password }</td>
+                <td style="border-style:none">${item.userType }</td>
 
-                <td><a href="${pageContext.request.contextPath }/user/delete?name=${item.name}">删除</a></td>
+                <td style="border-style:none"><a href="${pageContext.request.contextPath }/user/delete?name=${item.name}">删除</a></td>
 
             </tr>
         </c:forEach>
 
     </table>
+    </td></tr></table>
 </body>
 
 </html>

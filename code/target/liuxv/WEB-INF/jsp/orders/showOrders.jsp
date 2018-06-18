@@ -14,11 +14,24 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>showOrders</title>
-
+		<style type="text/css">
+    	body{
+    		background-image: url(../pic/bj2.jpg);
+    	}
+    </style>
 </head>
+<div class="vertical-align-middle">
+	<img src="../pic/logo.png" alt="旭旭的网上二手交易平台">
+</div>
+<style type="text/css">
+footer,h1{
+text-align: center;
+}
+</style>
 <body>
-订单列表：
-<table width="100%" border=1>
+<br/>
+<h1>订单列表：</h1>
+<table width="100%" border=2 bgcolor="blanchedalmond">
     <tr>
         <td>商品名称</td>
         <td>卖家</td>
@@ -39,4 +52,13 @@
 
 </table>
 </body>
+<footer class='foot_info_met_16_1 met-foot p-y-20 border-top1' m-id='6' m-type='foot'>
+	<div class="container text-xs-center">
+        <p>Email:liuxver444@gmail.com</p>
+        <div class="powered_by_metinfo">
+            Powered by 1007全体同学 <b><a href=http://www.liuxv.cn target=_blank>www.liuxv.cn</a></b> &copy;2008-2018 &nbsp;<a href=http://www.liuxv.cn target=_blank>www.liuxv.cn</a>		</div>
+        <ul class="met-langlist p-0">
+		    		    	    </ul>
+	</div>
+</footer>
 </html>

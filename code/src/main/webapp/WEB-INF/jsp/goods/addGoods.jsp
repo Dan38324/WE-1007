@@ -9,24 +9,38 @@
 <html>
 <head>
     <title>addGoods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	body{
+    		background-image: url(../pic/bj2.jpg);
+    	}
+    </style>
 </head>
+<div class="vertical-align-middle">
+	<img src="../pic/logo2.png" alt="旭旭的网上二手交易平台">
+</div>
+<style type="text/css">
+footer,h1{
+text-align: center;
+}
+</style>
 <body>
 <form id="itemForm" action="${pageContext.request.contextPath }/goods/insert?uname=${uname}" method="post"  enctype="multipart/form-data">
-    添加商品信息：
-    <table width="100%" border=1>
-        <tr>
+    <h1>添加商品信息：</h1>
+    <table width="100%" border=2 bgcolor="blanchedalmond">
+        <tr id="tr1">
             <td>商品名字</td>
             <td>
                 <input type="text" name="name"/></td>
             </td>
         </tr>
-        <tr>
+        <tr id="tr2">
             <td>商品价格</td>
             <td>
                 <input type="text" name="price"/></td>
             </td>
         </tr>
-        <tr>
+        <tr id="tr3">
             <td>商品类型</td>
             <td>
                 <select name="typeId">
@@ -39,7 +53,7 @@
                 </select>
             </td>
         </tr>
-        <tr>
+        <tr id="tr4">
             <td>商品图片</td>
             <td>
                <!-- <c:if test="${items.pic !=null}">
@@ -49,7 +63,7 @@
                 <input type="file" name="goods_pic"/>
             </td>
         </tr>
-        <tr>
+        <tr id="tr5">
             <td>商品信息</td>
             <td>
                 <textarea rows="3" cols="30" name="information"></textarea>
@@ -59,7 +73,7 @@
 
 
 
-        <tr>
+        <tr id="tr6">
             <td colspan="2" align="center"><input type="submit" value="添加留言"/>
             </td>
         </tr>
@@ -68,4 +82,13 @@
 </form>
 
 </body>
+<footer class='foot_info_met_16_1 met-foot p-y-20 border-top1' m-id='6' m-type='foot'>
+	<div class="container text-xs-center">
+        <p>Email:liuxver444@gmail.com</p>
+        <div class="powered_by_metinfo">
+            Powered by 1007全体同学 <b><a href=http://www.liuxv.cn target=_blank>www.liuxv.cn</a></b> &copy;2008-2018 &nbsp;<a href=http://www.liuxv.cn target=_blank>www.liuxv.cn</a>		</div>
+        <ul class="met-langlist p-0">
+		    		    	    </ul>
+	</div>
+</footer>
 </html>

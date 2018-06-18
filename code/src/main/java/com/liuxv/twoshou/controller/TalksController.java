@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/talks")
 public class TalksController {
 
-    static int num=20;
+    static int num=47;
     @Autowired
     private TalksService talksService;
 
@@ -48,12 +48,18 @@ public class TalksController {
     @RequestMapping("/delete")
     public String delete(@RequestParam("id") Integer id,Model model){
         talksService.deleteTalks( id );
+        List<Talks> talksList=talksService.getAllTalks();
+        for(int i=0;i<talksList.size();i++){
+            System.out.println( talksList.get( i ).getId()+" "+talksList.get( i ).getWords() );
+        }
+        model.addAttribute( "talksList",talksList );
+        //model.addAttribute( "uname",uname );
         return "talks/showTalks";
     }
 
 
     @RequestMapping("/addTalks")
-    public String addTalks(String uname,Talks talks,Model model){
+    public String addTalks(@RequestParam("uname") String uname,Talks talks,Model model){
         Date date=new Date(  );
         num++;
         String s=date.toString();
@@ -69,7 +75,7 @@ public class TalksController {
             System.out.println( talksList.get( i ).getId()+" "+talksList.get( i ).getWords() );
         }
         model.addAttribute( "talksList",talksList );
-        model.addAttribute( "name",uname );
+        model.addAttribute( "uname",uname );
         return "talks/showTalksUser";
     }
 
