@@ -11,20 +11,19 @@
     <title>addGoods</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <style type="text/css">
-    	body{
-    		background-image: url(../pic/bj2.jpg);
-    	}
+
     </style>
 </head>
 <div class="vertical-align-middle">
-	<img src="../pic/logo2.png" alt="旭旭的网上二手交易平台">
+
 </div>
 <style type="text/css">
 footer,h1{
 text-align: center;
 }
 </style>
-<body>
+<body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg">
+
 <form id="itemForm" action="${pageContext.request.contextPath }/goods/insert?uname=${uname}" method="post"  enctype="multipart/form-data">
     <h1>添加商品信息：</h1>
     <table width="100%" border=2 bgcolor="blanchedalmond">

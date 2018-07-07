@@ -69,8 +69,7 @@ fieldset legend {
     padding:3px 20px 3px 20px; 
     border:1px solid #1E7ACE;     
     background:#fff; 
-} 
- 
+}
 fieldset label { 
     float:left; 
     width:120px; 

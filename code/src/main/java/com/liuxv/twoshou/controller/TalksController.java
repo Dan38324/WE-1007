@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/talks")
 public class TalksController {
 
-    static int num=47;
+    static int num=120;
     @Autowired
     private TalksService talksService;
 

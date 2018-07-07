@@ -67,6 +67,16 @@ public class UserController {
     }
 
 
+    @RequestMapping("/backhome")
+    public String backhome(Model model,@RequestParam("name") String name){
+        model.addAttribute( "name",name );
+        return "userHome";
+    }
+
+
+
+
+
     @RequestMapping("/adminLogin")
     public String adminLogin(User user,Model model) {
         List<User> users = userService.getAllUser();

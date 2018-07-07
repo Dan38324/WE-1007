@@ -45,12 +45,7 @@ body{background-image: url(https://show.metinfo.cn/m/mui109/382/);background-pos
         <div class="container">
             <div class="row">
                 <h1 hidden>旭旭的网上二手交易平台</h1>
-                <div class="navbar-header pull-xs-left">
-                    <a href="home.jsp" class="met-logo vertical-align block pull-xs-left p-y-5" title="旭旭的网上二手交易平台">
-                        <div class="vertical-align-middle">
-                            <img src="pic/logo2.png" alt="旭旭的网上二手交易平台"></div>
-                    </a>
-                </div>
+
                 <button type="button" class="navbar-toggler hamburger hamburger-close collapsed p-x-5 met-nav-toggler" data-target="#met-nav-collapse" data-toggle="collapse">
                     <span class="sr-only"></span>
                     <span class="hamburger-bar"></span>
@@ -88,18 +83,7 @@ body{background-image: url(https://show.metinfo.cn/m/mui109/382/);background-pos
         <div class="slick-slide">
         <img class="cover-image" src="pic/6.jpg" srcset='pic/6.jpg 767w,pic/6.jpg' sizes="(max-width: 767px) 767px" alt="" data-height='0|0|0' >
                             </div>
-        <div class="slick-slide">
-        <img class="cover-image" src="pic/2.jpg" srcset='pic/2.jpg 767w,pic/2.jpg' sizes="(max-width: 767px) 767px" alt="" data-height='0|0|0' >
-                            </div>
-        <div class="slick-slide">
-        <img class="cover-image" src="pic/3.jpg" srcset='pic/3.jpg 767w,pic/3.jpg' sizes="(max-width: 767px) 767px" alt="" data-height='0|0|0' >
-                            </div>  
-        <div class="slick-slide">
-        <img class="cover-image" src="pic/4.jpg" srcset='pic/4.jpg 767w,pic/4.jpg' sizes="(max-width: 767px) 767px" alt="" data-height='0|0|0' >
-                            </div>
-        <div class="slick-slide">
-        <img class="cover-image" src="pic/5.jpg" srcset='pic/5.jpg 767w,pic/5.jpg' sizes="(max-width: 767px) 767px" alt="" data-height='0|0|0' >
-                            </div>                    
+
     </div>
 
             
@@ -110,13 +94,7 @@ body{background-image: url(https://show.metinfo.cn/m/mui109/382/);background-pos
 		<p class="desc m-b-0 font-weight-300 invisible" data-plugin="appear" data-animate="fade" data-repeat="false">Make a better deal for your youth.</p>
 			<div class='nav-tabs-horizontal nav-tabs-inverse nav-tabs-animate' data-plugin="tabs">
 			</div>
-			<img src="pic/1.jpg" width="250" height="200" />
-			<img src="pic/gw5.jpg" width="250" height="200" />
-			<img src="pic/gw2.jpg" width="250" height="200" />
-			<img src="pic/gw4.jpg" width="250" height="200" />
-			<img src="pic/gw3.jpg" width="250" height="200" />
-			<img src="pic/8.jpg" width="250" height="200" />
-			<img src="pic/gw1.jpg" width="250" height="200" />
+
 </div>
 
         <footer class='foot_info_met_16_1 met-foot p-y-20 border-top1' m-id='6' m-type='foot'>
