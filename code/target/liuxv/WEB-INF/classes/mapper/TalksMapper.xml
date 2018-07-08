@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.liuxv.twoshou.po.Talks" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="talker_name" property="talkerName" jdbcType="VARCHAR" />
-    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
     <result column="words" property="words" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -66,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, talker_name, CREATE_DATE, words
+    id, talker_name, date, words
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.liuxv.twoshou.po.TalksExample" >
     select
@@ -82,12 +82,6 @@
       order by ${orderByClause}
     </if>
   </select>
-
-  <select id="getAllTalks" resultMap="BaseResultMap">
-    select id,talker_name,CREATE_DATE,words from talks;
-  </select>
-
-
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -105,9 +99,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.liuxv.twoshou.po.Talks" >
-    insert into talks (id, talker_name, CREATE_DATE, 
+    insert into talks (id, talker_name, date, 
       words)
-    values (#{id,jdbcType=INTEGER}, #{talkerName,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{talkerName,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, 
       #{words,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.liuxv.twoshou.po.Talks" >
@@ -119,8 +113,8 @@
       <if test="talkerName != null" >
         talker_name,
       </if>
-      <if test="createDate != null" >
-        CREATE_DATE,
+      <if test="date != null" >
+        date,
       </if>
       <if test="words != null" >
         words,
@@ -133,14 +127,42 @@
       <if test="talkerName != null" >
         #{talkerName,jdbcType=VARCHAR},
       </if>
-      <if test="createDate != null" >
-        #{createDate,jdbcType=TIMESTAMP},
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
       </if>
       <if test="words != null" >
         #{words,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
+
+
+
+
+
+
+  <select id="getAllTalks" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" /> from talks;
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <select id="countByExample" parameterType="com.liuxv.twoshou.po.TalksExample" resultType="java.lang.Integer" >
     select count(*) from talks
     <if test="_parameter != null" >
@@ -156,8 +178,8 @@
       <if test="record.talkerName != null" >
         talker_name = #{record.talkerName,jdbcType=VARCHAR},
       </if>
-      <if test="record.createDate != null" >
-        CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=VARCHAR},
       </if>
       <if test="record.words != null" >
         words = #{record.words,jdbcType=VARCHAR},
@@ -171,7 +193,7 @@
     update talks
     set id = #{record.id,jdbcType=INTEGER},
       talker_name = #{record.talkerName,jdbcType=VARCHAR},
-      CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+      date = #{record.date,jdbcType=VARCHAR},
       words = #{record.words,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -183,8 +205,8 @@
       <if test="talkerName != null" >
         talker_name = #{talkerName,jdbcType=VARCHAR},
       </if>
-      <if test="createDate != null" >
-        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
       </if>
       <if test="words != null" >
         words = #{words,jdbcType=VARCHAR},
@@ -195,7 +217,7 @@
   <update id="updateByPrimaryKey" parameterType="com.liuxv.twoshou.po.Talks" >
     update talks
     set talker_name = #{talkerName,jdbcType=VARCHAR},
-      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      date = #{date,jdbcType=VARCHAR},
       words = #{words,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

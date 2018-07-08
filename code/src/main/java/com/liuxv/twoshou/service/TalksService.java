@@ -13,4 +13,6 @@ public interface TalksService {
     public List<Talks> getAllTalks();
 
     public void deleteTalks(int id);
+
+    public void insert(Talks talks);
 }

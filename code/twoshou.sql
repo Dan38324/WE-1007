@@ -2,6 +2,8 @@ drop database twoshou;
 create database twoshou;
 use twoshou;
 
+
+
 create table user(
 name varchar(20) primary key,
 password varchar(20),
@@ -17,6 +19,7 @@ create table goods(
 name varchar(20) primary key,
 price int,
 type_id int,#商品类型
+pic varchar(100),
 seller varchar(20),
 status int,#是否出售
 information varchar(200),
@@ -28,7 +31,7 @@ CONSTRAINT a FOREIGN KEY (type_id) REFERENCES goods_type(id)
 create table talks(
 id int primary key,
 talker_name varchar(20),
-CREATE_DATE TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+date varchar(50),
 words varchar(200),
 constraint c foreign key (talker_name) references user(name));
 
@@ -53,8 +56,8 @@ insert into goods_type values(1,'高端消费品');
 
 
 
-insert into goods values('iphone',3500,1,'liuman',1,'This is a very good phone. l like it very much .');
-	insert into goods values('software engining',30,2,'mengmeng',1,'This book is very userfull.');
+insert into goods values('iphone',3500,1,'aaaaaaaaaaaa.jpg','liuman',1,'This is a very good phone. l like it very much .');
+	insert into goods values('software engining',30,2,'bbbbbb.jpg','mengmeng',1,'This book is very userfull.');
 
 insert into talks(id,talker_name,words) values(1,'liuxv','l love her.');
 
@@ -64,7 +67,27 @@ insert into orders (name, seller, buyer) values ('iphone','liuman','mengmeng');
 
 
 
+delimiter //
+create trigger addorder
+after insert on orders
+for each row
+begin
 
+update goods set goods.status=2 where new.name=goods.name;
+
+
+end;//
+delimiter ;
+
+
+delimiter //
+create trigger deleteorder
+after delete on orders
+for each row
+begin
+update goods set goods.status=1 where old.name=goods.name;
+end;//
+delimiter ;
 
 
 

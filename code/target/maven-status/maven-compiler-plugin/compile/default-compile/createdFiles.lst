@@ -4,6 +4,7 @@ com\liuxv\twoshou\service\TalksService.class
 com\liuxv\twoshou\service\impl\OrdersServiceImpl.class
 com\liuxv\twoshou\service\impl\TalksServicesImpl.class
 com\liuxv\twoshou\po\UserExample$Criteria.class
+com\liuxv\twoshou\controller\HomeController.class
 com\liuxv\twoshou\mapper\GoodsTypeMapper.class
 com\liuxv\twoshou\po\GoodsTypeExample.class
 com\liuxv\twoshou\po\OrdersExample$Criterion.class

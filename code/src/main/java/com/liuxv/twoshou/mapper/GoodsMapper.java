@@ -18,7 +18,7 @@ public interface GoodsMapper {
 
     List<Goods> selectByExample(GoodsExample example);
 
-    List<Goods> selectAllGoods();
+    List<Goods> AllGoods();
 
     Goods selectByPrimaryKey(String name);
 

@@ -7,6 +7,15 @@ public class Orders {
 
     private String buyer;
 
+
+    public Orders(String s1,String s2,String s3){
+        this.name=s1;
+        this.seller=s2;
+        this.buyer=s3;
+    }
+
+
+
     public String getName() {
         return name;
     }

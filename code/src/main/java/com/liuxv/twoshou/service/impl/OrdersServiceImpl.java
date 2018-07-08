@@ -6,6 +6,7 @@ import com.liuxv.twoshou.po.OrdersExample;
 import com.liuxv.twoshou.po.User;
 import com.liuxv.twoshou.service.OrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 
 import java.util.List;
 
@@ -26,8 +27,8 @@ public class OrdersServiceImpl implements OrdersService {
     }
 
     @Override
-    public List<Orders> findOrdersByUser(User user) {
-        OrdersExample ordersExample=new OrdersExample();
+    public List<Orders> findOrdersByUser(String name) {
+      /*  OrdersExample ordersExample=new OrdersExample();
         OrdersExample.Criteria criteria = ordersExample.createCriteria();
         criteria.andBuyerEqualTo( user.getName() );
         List<Orders> orders=ordersMapper.selectByExample( ordersExample );
@@ -39,7 +40,8 @@ public class OrdersServiceImpl implements OrdersService {
 
 
 
-        orders.addAll( orders1 );
+        orders.addAll( orders1 );*/
+      List<Orders> orders=ordersMapper.findOrdersByName(name);
 
         return orders;
     }

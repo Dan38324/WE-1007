@@ -108,8 +108,6 @@
     <!-- 静态资源解析
     包括 ：js、css、img、..
      -->
-    <mvc:resources location="/js/" mapping="/js/**"/>
-
 
 
 

@@ -18,6 +18,8 @@ public interface GoodsService {
 
     public void insertGoods(Goods goods);
 
+    public Goods findGoodsByName(String name);
+
 
 
 }

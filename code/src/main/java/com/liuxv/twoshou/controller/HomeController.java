@@ -21,4 +21,17 @@ public class HomeController {
     public String login(){
         return "login";
     }
+
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
+    }
+
+    @RequestMapping("/adminLogin")
+    public String adminLogin(){
+        return "adminLogin";
+    }
+
+
+
 }
