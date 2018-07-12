@@ -91,9 +91,10 @@ fieldset div {
  
 --> 
 </style> 
-</head> 
- 
-<body> 
+</head>
+
+<body style="background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg);">
+
 <div id="formwrapper"> 
  
 <h1>register</h1> 

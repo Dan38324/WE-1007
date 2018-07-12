@@ -54,10 +54,14 @@ text-align: center;
             </td>
             <td>${item.typeId}</td>
             <td>${item.seller}</td>
-            <td>${item.status}</td>
+            <c:if test="${item.status==1}"><td>未出售</td>
+                <td>${item.information}</td>
+                <td><a href="${pageContext.request.contextPath }/goods/delete?name=${item.name}">删除</a></td>
+            </c:if>
+            <c:if test="${item.status==2}"><td>已经售出</td>
             <td>${item.information}</td>
-
-            <td><a href="${pageContext.request.contextPath }/goods/delete?name=${item.name}">删除</a></td>
+            <td>不可删除</td>
+            </c:if>
 
         </tr>
     </c:forEach>

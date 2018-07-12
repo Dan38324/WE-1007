@@ -28,6 +28,7 @@ public class UserController {
 
     @RequestMapping("/login")
     public String login(User user,Model model){
+
         List<User> users=userService.getAllUser();
         user.setUserType( 2 );
         boolean flag=false;
@@ -123,7 +124,7 @@ public class UserController {
         user.setUserType( 2 );
         boolean flag=true;
         for (int i=0;i<users.size();i++){
-            if(users.get( i ).equals( user ) ){
+            if(users.get( i ).getName().equals( user.getName() ) ){
                 flag=false;
             }
         }

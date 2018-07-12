@@ -36,6 +36,7 @@ public class GoodsController {
         for(int i=0;i<goods.size();i++){
             if(goods.get( i ).getStatus()==2){
                 goods.remove( i );
+                i--;
             }
         }
         model.addAttribute( "goodsList",goods );
@@ -54,6 +55,7 @@ public class GoodsController {
             System.out.println( goods.get( i ).getName()+":"+goods.get( i ).getStatus()+":"+goods.get( i ).getSeller() );
             if(goods.get( i ).getStatus()==2){
                 goods.remove( i );
+                i--;
             }
         }
         System.out.println( goods.size() );
@@ -128,7 +130,7 @@ public class GoodsController {
 
         System.out.println( goods.getName()+":"+goods.getStatus()+ goods.getSeller());
         model.addAttribute( "name",uname );
-        return "userHome";
+        return "redirect:/user/backhome";
     }
 
     @RequestMapping("/delete")

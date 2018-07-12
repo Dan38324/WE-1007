@@ -19,7 +19,7 @@
 
     </style>
 </head>
-</style>
+
 
                                     <body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg">
                                                                                                                                                                                                                                                                                                        <div class="vertical-align-middle">
@@ -41,9 +41,9 @@
              	<summary>商品详细信息</summary>
              <li>商品名称 ${item.name }</li>
              <li>商品价格 ${item.price }</li>
-             <li>商品类型 ${item.typeId}</li>
+
              <li>商品卖家 ${item.seller}</li>
-             <li>商品状态 ${item.status}</li>
+
              <li>商品信息 ${item.information}</li>
              <li>操作 <a href="${pageContext.request.contextPath }/orders/buy?name=${item.name}&uname=${uname}&seller=${item.seller}">购买</a>
              </li>

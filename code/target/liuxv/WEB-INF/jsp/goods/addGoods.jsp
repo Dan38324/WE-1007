@@ -30,7 +30,7 @@ text-align: center;
         <tr id="tr1">
             <td>商品名字</td>
             <td>
-                <input type="text" name="name"/></td>
+                <input type="text" name="name" /></td>
             </td>
         </tr>
         <tr id="tr2">
@@ -65,7 +65,7 @@ text-align: center;
         <tr id="tr5">
             <td>商品信息</td>
             <td>
-                <textarea rows="3" cols="30" name="information"></textarea>
+                <textarea rows="3" cols="30" name="information" placeholder="请输入商品新旧程度，是否损坏，是否保修，联系方式，交易方式"></textarea>
             </td>
         </tr>
 
@@ -73,7 +73,7 @@ text-align: center;
 
 
         <tr id="tr6">
-            <td colspan="2" align="center"><input type="submit" value="添加留言"/>
+            <td colspan="2" align="center"><input type="submit" value="添加商品"/>
             </td>
         </tr>
     </table>

@@ -17,37 +17,16 @@
 
 </head>
 <body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg">
-<h3>Welcome，${uname}</h3>
-<a href="/user/backhome?name=${uname}">返回主页面</a>
-   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="center" valign="middle">
-	
+<h1><font size="5" color="B5B5B5">Welcome，${uname}</font></h1>
+<a href="/user/backhome?name=${uname}" >回到主页面</a>
+<h2 class="agileits w3 wthree w3-agile w3-agileits agileinfo agile"> <font size="4.5" color="B5B5B5">留言</font></h2>
+<div class="content-w3ls agileits w3 wthree w3-agile w3-agileits agileinfo agile">
+    <form action="${pageContext.request.contextPath }/talks/addTalks?uname=${uname}"  method="post" class="form-agileits" enctype="multipart/form-data">
+        <h3>LEAVE MESSAGE</h3>
 
-
-<form id="talksForm" action="${pageContext.request.contextPath }/talks/addTalks?uname=${uname}" method="post"  enctype="multipart/form-data">
-  
-  
-   
-    <table width="100%" border=none style="border-style:none" bgcolor="blanchedalmond">
-        <tr>
-            <td style="border-style:none">留言内容</td>
-
-        </tr>
-        <tr>
-        	            <td style="border-style:none">
-                <textarea rows="3" cols="100" name="words"></textarea>
-            </td> 
-        </tr>
-
-        <tr>
-            <td  style="border-style:none" colspan="2" align="center"><input type="submit" value="添加留言"/>
-            </td>
-        </tr>
-    </table>
-
-</form>
-
-
-
+        <textarea id="words" name="words" placeholder="YOUR MESSAGE" title="Please enter Your Comments"></textarea>
+        <input type="submit" class="sign-in" value="提交">
+    </form>
 
 
        <table width="100%" style="border-style:none" border=hidden bgcolor="blanchedalmond" margin=auto>
@@ -72,6 +51,7 @@
            </c:forEach>
 
        </table>
+</div>
 </table>
 </body>
 </html>

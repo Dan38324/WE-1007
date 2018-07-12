@@ -18,9 +18,7 @@
 
     </style>
 </head>
-<div class="vertical-align-middle">
-	<img src="../pic/logo.png" alt="旭旭的网上二手交易平台">
-</div>
+
 <style type="text/css">
 footer,h1{
 text-align: center;

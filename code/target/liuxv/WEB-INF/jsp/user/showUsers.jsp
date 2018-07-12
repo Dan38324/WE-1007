@@ -17,12 +17,12 @@
 
 </head>
 <body>
-	<body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg">
+<body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1525427969514&di=67961a76982a7e887da459bc29461ce7&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F88%2F32%2F10q58PICGW8_1024.jpg">
 
-   <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="center" valign="middle">
-    <font size="15">用户列表：</font>
-    <table width="100%" style="border-style:none" border=2 bgcolor="blanchedalmond">
-    
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="center" valign="middle">
+    用户列表：
+    <table width="100%" style="border-style:none" border=2 bgcolor=#66CCFF>
+
         <tr>
             <td style="border-style:none">名称</td>
             <td style="border-style:none">密码</td>
@@ -42,7 +42,7 @@
         </c:forEach>
 
     </table>
-    </td></tr></table>
+</td></tr></table>
 </body>
 
 </html>
